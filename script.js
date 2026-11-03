@@ -1,5 +1,4 @@
-
-    // Global State
+// Global State
     let rawLoadedRows = [];
     let lastGeneratedRows = [];
     let currentGenderMode = "alt_bench";
