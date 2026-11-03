@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सफलता एक्सप्रेस कोचिंग सेंटर - All-in-One Smart Seating Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- SheetJS for Reading CSV/Excel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <!-- html2pdf for Perfect Hindi Font Support & Clean PDFs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="py-6 px-3 sm:px-6 flex flex-col items-center justify-center">
+
+<div class="w-full max-w-3xl flex flex-col items-center z-10">
+    <!-- Top Outer Badge -->
+    <div class="top-outer-badge mb-3">OFFICIAL EXAM SEATING PORTAL • ALL-IN-ONE MASTER EDITION</div>
+
+    <div class="card-stage">
+        <div class="neon-bar-left"></div>
+        <div class="neon-bar-right"></div>
+
+        <div class="app-card text-center">
+            <!-- Coaching Logo -->
+            <div class="brand-logo">
+                <img id="coachingLogo" class="max-w-full h-auto" src="data:image/webp;base64,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" alt="सफलता एक्सप्रेस कोचिंग सेंटर लोगो">
+            </div>
+
+            <div class="inner-portal-badge">OFFICIAL EXAM PORTAL</div>
+
+            <h1 class="heading-hi text-2xl sm:text-3xl font-extrabold mb-1">सफलता एक्सप्रेस कोचिंग सेंटर</h1>
+            <p class="text-slate-400 text-xs sm:text-sm mb-4">All-in-One Automated Smart Bench & amp; Custom Seat Allotment System</p>
+
+            <!-- Live Active Settings Pills -->
+            <div class="flex justify-center flex-wrap gap-2 mb-5">
+                <div class="feature-pill"><span class="check">✓</span> <span id="pillSeatsPerPage">28 Seats / Page</span></div>
+                <div class="feature-pill"><span class="check">✓</span> <span id="pillBenchCount">3 Students / Bench</span></div>
+                <div class="feature-pill"><span class="check">✓</span> <span id="pillGenderMode">1 Bench Boys / 1 Bench Girls</span></div>
+                <div class="feature-pill"><span class="check">✓</span> <span id="pillSeatRule">Skip 4th Seat (1,2,3, 5,6,7)</span></div>
+            </div>
+
+                        <!-- VISUAL 4-STEP GUIDE BANNER -->
+            <div class="bg-slate-900/95 border border-cyan-500/40 rounded-xl p-3.5 mb-4 text-left shadow-lg">
+                <div class="flex items-center justify-between mb-2.5">
+                    <span class="text-xs sm:text-sm font-bold text-cyan-300 flex items-center gap-1.5">
+                        <span>📘</span> इसे कैसे चलाएँ? (4 आसान स्टेप्स - चित्र सहित)
+                    </span>
+                    <button type="button" id="btnToggleGuide" class="text-[11px] bg-cyan-950 text-cyan-300 border border-cyan-500/40 px-2 py-0.5 rounded hover:bg-cyan-900 transition">
+                        Hide / Show
+                    </button>
+                </div>
+                <div id="visualGuideSteps" class="grid grid-cols-1 sm:grid-cols-4 gap-2 text-xs">
+                    <div class="bg-slate-950/90 border border-slate-700 rounded-lg p-2.5 flex flex-col justify-between">
+                        <div class="font-bold text-amber-300 mb-1">📂 Step 1: फाइल चुनें</div>
+                        <p class="text-[11px] text-slate-300 leading-relaxed"><b>Choose File</b> दबाकर अपनी Excel/CSV फाइल चुनें (टेस्टिंग के लिए <b>⚡ Demo Students</b> दबाएँ)।</p>
+                    </div>
+                    <div class="bg-slate-950/90 border border-slate-700 rounded-lg p-2.5 flex flex-col justify-between">
+                        <div class="font-bold text-cyan-300 mb-1">🪑 Step 2: बेंच चुनें</div>
+                        <p class="text-[11px] text-slate-300 leading-relaxed">1 बेंच पर कितने बच्चे (2 या 3) और <b>Boys/Girls या Mix</b> चुनें। नीचे <b>बेंच के चित्र</b> में तुरंत असर देखें!</p>
+                    </div>
+                    <div class="bg-slate-950/90 border border-slate-700 rounded-lg p-2.5 flex flex-col justify-between">
+                        <div class="font-bold text-emerald-300 mb-1">🔑 Step 3: पासवर्ड डालें</div>
+                        <p class="text-[11px] text-slate-300 leading-relaxed">नीचे पासवर्ड बॉक्स में अपना पासवर्ड (<b>Dhruv@12345</b>) टाइप करें।</p>
+                    </div>
+                    <div class="bg-slate-950/90 border border-slate-700 rounded-lg p-2.5 flex flex-col justify-between">
+                        <div class="font-bold text-pink-300 mb-1">📄 Step 4: PDF डाउनलोड</div>
+                        <p class="text-[11px] text-slate-300 leading-relaxed"><b>Generate & amp; Download PDF</b> बटन दबाएँ, आपकी A4 सीटिंग PDF तुरंत डाउनलोड हो जाएगी!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 1: FILE UPLOAD & SAMPLE TOOLS -->
+            <div class="file-upload-wrapper mb-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                    <div class="flex items-center gap-2 text-slate-200 text-sm font-semibold">
+                        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/><path d="M12 13v6"/><path d="m9 16 3-3 3 3"/></svg>
+                        <span>Step 1: Student Excel / CSV File चुनें</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button type="button" id="btnLoadDemo" class="text-xs bg-cyan-950/80 hover:bg-cyan-900 text-cyan-300 border border-cyan-500/40 px-2.5 py-1 rounded-md transition font-medium">
+                            ⚡ Demo Students लोड करें
+                        </button>
+                        <button type="button" id="btnDownloadSample" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-2.5 py-1 rounded-md transition font-medium">
+                            📥 Sample CSV डाउनलोड
+                        </button>
+                    </div>
+                </div>
+                <input type="file" id="fileInput" accept=".csv, .xlsx, .xls">
+                
+                <!-- Live File Summary Bar -->
+                <div id="fileStatsBar" class="hidden mt-3 pt-2.5 border-t border-slate-700/80 grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                    <div class="bg-slate-900/90 border border-slate-700 rounded-lg py-1.5 px-2">
+                        <span class="text-slate-400 block">कुल स्टूडेंट्स</span>
+                        <span id="statTotal" class="text-white font-bold text-sm">0</span>
+                    </div>
+                    <div class="bg-slate-900/90 border border-blue-500/30 rounded-lg py-1.5 px-2">
+                        <span class="text-blue-300 block">लड़के (Boys)</span>
+                        <span id="statBoys" class="text-blue-400 font-bold text-sm">0</span>
+                    </div>
+                    <div class="bg-slate-900/90 border border-pink-500/30 rounded-lg py-1.5 px-2">
+                        <span class="text-pink-300 block">लड़कियाँ (Girls)</span>
+                        <span id="statGirls" class="text-pink-400 font-bold text-sm">0</span>
+                    </div>
+                    <div class="bg-slate-900/90 border border-emerald-500/30 rounded-lg py-1.5 px-2">
+                        <span class="text-emerald-300 block">कुल बेंच / पेज</span>
+                        <span id="statBenchesPages" class="text-emerald-400 font-bold text-sm">0 Benches</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 2: ALL-IN-ONE SEATING CONFIGURATION -->
+            <div class="control-panel mb-4">
+                <div class="flex items-center justify-between border-b border-slate-700/80 pb-2.5 mb-3.5">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                        <h2 class="text-sm sm:text-base font-bold text-white">Step 2: सीटिंग और बेंच सेटिंग्स (All-in-One Controls)</h2>
+                    </div>
+                    <span class="text-[11px] text-cyan-300 bg-cyan-950/90 border border-cyan-500/30 px-2.5 py-0.5 rounded-full">One File For All Needs</span>
+                </div>
+
+                <!-- Quick Preset Buttons (Old index.html vs index1.html presets) -->
+                <div class="mb-4">
+                    <label class="form-label">⚡ Quick Presets (तुरंत रेडीमेड सेटिंग चुनें):</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                        <button type="button" id="presetIndex0" class="text-xs py-2 px-2.5 rounded-lg border border-cyan-400 bg-cyan-950/70 text-cyan-200 font-semibold hover:bg-cyan-900/80 transition text-center">
+                            🏫 File-1: 3 Boy / 3 Girl Bench (Skip 4th)
+                        </button>
+                        <button type="button" id="presetIndex1" class="text-xs py-2 px-2.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 font-semibold hover:border-cyan-500/50 transition text-center">
+                            👫 File-2: 2 Student Mix Bench (1,2,3...)
+                        </button>
+                        <button type="button" id="presetOnlyBoys" class="text-xs py-2 px-2.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 font-semibold hover:border-cyan-500/50 transition text-center">
+                            👦 Only Boys Seating
+                        </button>
+                        <button type="button" id="presetOnlyGirls" class="text-xs py-2 px-2.5 rounded-lg border border-slate-700 bg-slate-900/80 text-slate-300 font-semibold hover:border-cyan-500/50 transition text-center">
+                            👧 Only Girls Seating
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Grid Controls -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-3.5">
+                    <!-- 1. Students Per Bench -->
+                    <div>
+                        <label for="benchSizeSelect" class="form-label">1. एक बेंच पर कितने स्टूडेंट्स बैठेंगे?</label>
+                        <select id="benchSizeSelect" class="form-select">
+                            <option value="1">1 Student / Bench (Single Exam Desk)</option>
+                            <option value="2">2 Students / Bench (Double Sharing)</option>
+                            <option value="3" selected>3 Students / Bench (Triple Sharing)</option>
+                            <option value="4">4 Students / Bench (Four Sharing)</option>
+                            <option value="5">5 Students / Bench (Five Sharing)</option>
+                            <option value="6">6 Students / Bench (Six Sharing)</option>
+                        </select>
+                    </div>
+
+                    <!-- 2. Seat Numbering Logic -->
+                    <div>
+                        <label for="seatRuleSelect" class="form-label">2. सीट नंबर (Seat No.) कैसे चलेगा?</label>
+                        <select id="seatRuleSelect" class="form-select">
+                            <option value="skip4" selected>4 के गुणज हटाएँ: 1, 2, 3, [4 खाली], 5, 6, 7, [8 खाली]...</option>
+                            <option value="corner14">1 के बाद 4 पैटर्न: 1, 4 | 5, 8 | 9, 12 | 13, 16... (बीच में 2 सीट खाली)</option>
+                            <option value="sequential">लगातार क्रम से: 1, 2, 3, 4, 5, 6, 7... (कोई सीट नहीं छूटेगी)</option>
+                            <option value="skipAfterBench">हर बेंच के बाद 1 सीट नंबर छोड़ें (Gap after Bench)</option>
+                            <option value="benchCode">बेंच + सीट कोड: B1-1, B1-2, B2-1...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- 3. Gender & Mixing Mode -->
+                <div class="mb-3.5">
+                    <label class="form-label">3. Boys / Girls / Mixing का नियम चुनें (Gender Arrangement):</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5" id="genderModeGroup">
+                        <!-- Mode A -->
+                        <div class="mode-card active" data-mode="alt_bench">
+                            <input type="radio" name="genderMode" value="alt_bench" checked class="mt-1 accent-cyan-400">
+                            <div>
+                                <div class="text-xs sm:text-sm font-bold text-white">1 बेंच Boys / 1 बेंच Girls (Alternating Bench)</div>
+                                <div class="text-[11px] text-slate-400">एक बेंच पर सिर्फ लड़के, अगली बेंच पर सिर्फ लड़कियाँ (बारी-बारी से)</div>
+                            </div>
+                        </div>
+
+                        <!-- Mode B -->
+                        <div class="mode-card" data-mode="mix_random">
+                            <input type="radio" name="genderMode" value="mix_random" class="mt-1 accent-cyan-400">
+                            <div>
+                                <div class="text-xs sm:text-sm font-bold text-white">Boys + Girls Full Mixing (रैंडम मिक्स)</div>
+                                <div class="text-[11px] text-slate-400">लड़के और लड़कियाँ एक साथ रैंडम किसी भी बेंच/सीट पर बैठेंगे</div>
+                            </div>
+                        </div>
+
+                        <!-- Mode C -->
+                        <div class="mode-card" data-mode="mix_alt_seat">
+                            <input type="radio" name="genderMode" value="mix_alt_seat" class="mt-1 accent-cyan-400">
+                            <div>
+                                <div class="text-xs sm:text-sm font-bold text-white">एक ही बेंच पर 1 Boy - 1 Girl (Alternating Seat)</div>
+                                <div class="text-[11px] text-slate-400">हर सीट पर बारी-बारी से 1 लड़का और 1 लड़की (नकल रोकने के लिए)</div>
+                            </div>
+                        </div>
+
+                        <!-- Mode D -->
+                        <div class="mode-card" data-mode="separate_blocks">
+                            <input type="radio" name="genderMode" value="separate_blocks" class="mt-1 accent-cyan-400">
+                            <div>
+                                <div class="text-xs sm:text-sm font-bold text-white">पहले सभी Girls बेंच, फिर सभी Boys बेंच (Separate Blocks)</div>
+                                <div class="text-[11px] text-slate-400">शुरुआत की बेंचों पर पूरी लड़कियाँ और उसके बाद पूरे लड़के (या उल्टा)</div>
+                            </div>
+                        </div>
+
+                        <!-- Mode E -->
+                        <div class="mode-card" data-mode="only_boys">
+                            <input type="radio" name="genderMode" value="only_boys" class="mt-1 accent-cyan-400">
+                            <div>
+                                <div class="text-xs sm:text-sm font-bold text-blue-300">👦 Only Boys (सिर्फ लड़कों की सीटिंग)</div>
+                                <div class="text-[11px] text-slate-400">फाइल में से केवल Boys को फ़िल्टर करके सीट अलॉट करेगा</div>
+                            </div>
+                        </div>
+
+                        <!-- Mode F -->
+                        <div class="mode-card" data-mode="only_girls">
+                            <input type="radio" name="genderMode" value="only_girls" class="mt-1 accent-cyan-400">
+                            <div>
+                                <div class="text-xs sm:text-sm font-bold text-pink-300">👧 Only Girls (सिर्फ लड़कियों की सीटिंग)</div>
+                                <div class="text-[11px] text-slate-400">फाइल में से केवल Girls को फ़िल्टर करके सीट अलॉट करेगा</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                <!-- LIVE VISUAL BENCH DIAGRAM (बेंच का लाइव चित्र) -->
+                <div class="mb-4 bg-slate-950/95 border border-cyan-500/40 rounded-xl p-3">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2 border-b border-slate-800 pb-2">
+                        <div class="text-xs font-bold text-cyan-300 flex items-center gap-1.5">
+                            <span>🖼️</span> लाइव बेंच चित्र (Figure: आपकी चुनी हुई सेटिंग पर बच्चे ऐसे बैठेंगे)
+                        </div>
+                        <span id="figureRuleExplain" class="text-[11px] text-amber-300 font-medium bg-amber-950/60 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                            1 बेंच पर 3 लड़के, अगली बेंच पर 3 लड़कियाँ
+                        </span>
+                    </div>
+                    <div id="liveBenchDiagram" class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
+                    </div>
+                </div>
+
+                <!-- 4. Extra Sub-Options (First Bench Priority, Shuffle Order, Rows per Page, Extra Columns) -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 border-t border-slate-800">
+                    <div>
+                        <label for="firstTurnSelect" class="form-label">4. पहली बेंच/शुरुआत किससे हो?</label>
+                        <select id="firstTurnSelect" class="form-select">
+                            <option value="random" selected>🎲 Random (50/50 Boys या Girls)</option>
+                            <option value="boys">👦 Boys से शुरुआत करें</option>
+                            <option value="girls">👧 Girls से शुरुआत करें</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="orderModeSelect" class="form-label">5. स्टूडेंट्स का क्रम (Order):</label>
+                        <select id="orderModeSelect" class="form-select">
+                            <option value="shuffle" selected>🔀 Auto Random Shuffle (रैंडम)</option>
+                            <option value="roll">🔢 Roll No. के अनुसार (1, 2, 3...)</option>
+                            <option value="name">🔤 नाम के अनुसार (A to Z)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="rowsPerPageSelect" class="form-label">6. एक पेज पर कितने स्टूडेंट्स?</label>
+                        <select id="rowsPerPageSelect" class="form-select">
+                            <option value="28" selected>28 Students / Page (Full A4 Fit - Default)</option>
+                            <option value="30">30 Students / Page (Full A4 Fit - 30 Rows)</option>
+                            <option value="32">32 Students / Page (Maximum Fit)</option>
+                            <option value="26">26 Students / Page (Large Rows)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Collapsible Extra Exam Header & Column Options -->
+                <div class="mt-3 pt-2.5 border-t border-slate-800">
+                    <button type="button" id="btnToggleAdvanced" class="text-xs text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1.5">
+                        <span id="advArrow">▶</span> अतिरिक्त PDF ऑप्शंस (Bench No. कॉलम, Signature कॉलम, Exam/Room का नाम)
+                    </button>
+
+                    <div id="advancedPanel" class="hidden mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-950/70 p-3 rounded-lg border border-slate-800">
+                        <div>
+                            <label for="examSubtitleInput" class="form-label">Exam / Room / Batch का नाम (Optional):</label>
+                            <input type="text" id="examSubtitleInput" class="form-input" placeholder="जैसे: Weekly Test - Room No. 1 (खाली भी छोड़ सकते हैं)">
+                        </div>
+                        <div class="flex flex-col justify-center gap-2 pt-1">
+                            <label class="inline-flex items-center gap-2 text-xs text-slate-200 cursor-pointer">
+                                <input type="checkbox" id="chkShowBenchCol" class="accent-cyan-400 w-4 h-4">
+                                <span>PDF टेबल में <b>Bench No.</b> का कॉलम भी दिखाएँ</span>
+                            </label>
+                            <label class="inline-flex items-center gap-2 text-xs text-slate-200 cursor-pointer">
+                                <input type="checkbox" id="chkShowSignCol" class="accent-cyan-400 w-4 h-4">
+                                <span>Attendance के लिए <b>Signature (हस्ताक्षर)</b> कॉलम जोड़ें</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inline Password Verification Bar -->
+            <div class="bg-slate-900/90 border border-slate-700/90 rounded-xl p-3 mb-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div class="flex items-center gap-2 text-left">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <div>
+                        <div class="text-xs font-bold text-slate-200">Official Password Protection</div>
+                        <div class="text-[11px] text-slate-400">PDF जनरेट या प्रीव्यू करने के लिए पासवर्ड दर्ज करें</div>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 w-full sm:w-auto">
+                    <div class="relative flex-1 sm:w-52">
+                        <input type="password" id="passwordInput" class="form-input pr-16 text-xs py-2" placeholder="Enter Password...">
+                        <button type="button" id="btnTogglePass" class="absolute right-2 top-1/2 -translate-y-1/2 text-[11px] text-cyan-400 hover:text-cyan-300 font-semibold px-1.5 py-0.5">
+                            Show
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons: Preview & Download PDF -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <button type="button" id="btnPreviewSeating" class="btn-secondary w-full">
+                    👁️ Live Preview देखें
+                </button>
+                <button type="button" id="btnReshuffle" class="btn-secondary w-full">
+                    🔀 दुबारा Shuffle करें
+                </button>
+                <button type="button" id="btnDownloadPDF" class="btn-primary w-full">
+                    📄 Generate & amp; Download PDF
+                </button>
+            </div>
+
+            <!-- Status Box -->
+            <div class="mt-3.5 text-xs sm:text-sm font-medium min-h-[22px]" id="statusText">
+                Status: <span class="text-emerald-400 font-semibold">Ready — फाइल चुनें या Demo लोड करें</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIVE INTERACTIVE PREVIEW PANEL (Shows generated seating table before/after PDF download) -->
+    <div id="livePreviewSection" class="hidden w-full mt-6 bg-slate-900/95 border border-cyan-500/50 rounded-2xl p-4 shadow-2xl">
+        <div class="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-700">
+            <div>
+                <h3 class="text-base font-bold text-white flex items-center gap-2">
+                    <span>📋 Live Seating Chart Preview</span>
+                    <span id="previewCountBadge" class="text-xs bg-cyan-500/20 text-cyan-300 border border-cyan-500/40 px-2.5 py-0.5 rounded-full">0 Students</span>
+                </h3>
+                <p class="text-xs text-slate-400">यहाँ आप देख सकते हैं कि किस बेंच और सीट पर कौन बैठा है (PDF बिल्कुल इसी डेटा से बनेगी)</p>
+            </div>
+            <div class="flex items-center gap-2">
+                <button type="button" id="btnExportExcel" class="text-xs bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-3 py-1.5 rounded-lg transition">
+                    📊 Excel में डाउनलोड करें
+                </button>
+                <button type="button" id="btnClosePreview" class="text-xs bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-600 px-3 py-1.5 rounded-lg transition">
+                    ✕ बंद करें
+                </button>
+            </div>
+        </div>
+
+        <div class="overflow-x-auto max-h-96 rounded-lg border border-slate-700">
+            <table class="w-full text-xs text-center border-collapse">
+                <thead class="bg-slate-800 text-cyan-300 sticky top-0">
+                    <tr id="previewTableHead">
+                        <th class="p-2 border border-slate-700">Roll No.</th>
+                        <th class="p-2 border border-slate-700">Student Name</th>
+                        <th class="p-2 border border-slate-700">Address</th>
+                        <th class="p-2 border border-slate-700">Bench No.</th>
+                        <th class="p-2 border border-slate-700">Seat No.</th>
+                        <th class="p-2 border border-slate-700">Gender</th>
+                    </tr>
+                </thead>
+                <tbody id="previewTableBody" class="divide-y divide-slate-800 text-slate-200">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Bottom Footer Outside Card -->
+    <div class="mt-4 flex flex-wrap justify-center items-center gap-3 text-xs text-slate-300 font-medium">
+        <span>SafaltaExpress All-in-One v3.0</span>
+        <span class="security-tag">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Password Protected
+        </span>
+    </div>
+</div>
+
+<!-- Hidden container for PDF rendering with Fixed Desktop Width -->
+<div id="pdfContainer" style="display: none; background: white; width: 750px; margin: 0 auto;"></div>
+
+<!-- Main Application Script -->
+<script src="script.js"></script>
+
+</body>
+</html>
